@@ -1,11 +1,11 @@
 import 'package:validateit/validateit.dart';
 
 void main() {
-  final emailValue = 'user@example.com';
-  final error = email(emailValue);
+  final phoneValue = '0821234567';
+  final error = phone(phoneValue);
 
   if (error == null) {
-    print('Valid email');
+    print('Valid phone number');
   } else {
     print(error);
   }

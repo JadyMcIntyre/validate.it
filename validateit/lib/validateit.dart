@@ -1,11 +1,12 @@
-/// More dartdocs go here.
+/// Collection of simple validation helpers.
 library;
 
-/// Email Validator
+
+/// Email validator.
 export 'src/validators/email.dart';
-/// Phone Validator
+/// Phone number validator.
 export 'src/validators/phone.dart';
-/// Required Validator
+/// Required field validator.
 export 'src/validators/required.dart';
-/// isNullOrEmpty Validator
+/// Utility to check for `null` or empty strings.
 export 'src/validators/null_or_empty.dart';

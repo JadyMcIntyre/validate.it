@@ -1,11 +1,14 @@
-import 'package:validateit/src/services/phone_service.dart';
-import 'package:validateit/validateit.dart';
+import '../services/phone_service.dart';
+import 'null_or_empty.dart';
+import 'required.dart';
 
-/// Checks if a value is a valid RSA phone number
+/// Validate a South African phone number.
 ///
-/// Used to validate phone forms
+/// When [r] is `true` a missing value will trigger an error message. If a value
+/// is supplied it is validated using [validatePhoneBru].
+///
+/// Returns `null` when the number is valid for South Africa.
 String? phone(String? v, {bool r = true}) {
-  if (r = false) return null;
-
+  if (!r && isNullOrEmpty(v)) return null;
   return required(v, 'phone number') ?? validatePhoneBru(v);
 }

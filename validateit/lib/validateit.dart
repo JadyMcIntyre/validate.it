@@ -1,8 +1,9 @@
-/// Support for doing something awesome.
-///
 /// More dartdocs go here.
 library;
 
-export 'src/validateit_base.dart';
-
-// TODO: Export any libraries intended for clients of this package.
+/// Email Validator
+export 'src/validators/email.dart';
+/// Phone Validator
+export 'src/validators/phone.dart';
+/// Required Validator
+export 'src/validators/required.dart';

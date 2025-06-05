@@ -7,3 +7,5 @@ export 'src/validators/email.dart';
 export 'src/validators/phone.dart';
 /// Required Validator
 export 'src/validators/required.dart';
+/// isNullOrEmpty Validator
+export 'src/validators/null_or_empty.dart';

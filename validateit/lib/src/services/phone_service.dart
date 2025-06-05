@@ -2,11 +2,14 @@ import 'package:dlibphonenumber/exceptions/number_parse_exception.dart';
 import 'package:dlibphonenumber/generated/classes/phone_number/phonenumber.pb.dart';
 import 'package:dlibphonenumber/phone_number_util.dart';
 
-/// Validates a phone number using dlibphonenumber, expecting a South African number.
+/// Validate a South African phone number using `dlibphonenumber`.
 ///
-/// Handles formats like: +27..., 27..., 0... and 79... (without country code).
+/// The function accepts numbers in formats such as `+27...`, `27...`, `0...`
+/// or `79...` (without a country code). It returns `null` when the number is
+/// valid and an error message otherwise.
 String? validatePhoneBru(String? v) {
-  final String trimmedValue = v!.trim();
+  if (v == null) return 'Invalid phone number format. Please check the number.';
+  final String trimmedValue = v.trim();
   const String regionCode = 'ZA';
 
   PhoneNumberUtil phoneUtil = PhoneNumberUtil.instance;
@@ -23,9 +26,9 @@ String? validatePhoneBru(String? v) {
     } else {
       return 'Please enter a valid South African phone number.';
     }
-  } on NumberParseException catch (e) {
+  } on NumberParseException catch (_) {
     return 'Invalid phone number format. Please check the number.';
-  } catch (e) {
+  } catch (_) {
     return 'An error occurred validating the phone number.';
   }
 }

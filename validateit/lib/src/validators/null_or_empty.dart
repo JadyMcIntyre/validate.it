@@ -1,9 +1,4 @@
-/// Checks if a value is null or empty
-/// 
-/// returns [bool] 
-/// 
-/// true if the value is null or empty,
-/// false otherwise
-/// 
-/// Used for Early Exit/Guard-clause
-bool isNullOrEmpty(dynamic v) => v == null && v.trim().isEmpty;
+/// Determine whether [v] is `null` or an empty string.
+///
+/// Useful for guard clauses in validators.
+bool isNullOrEmpty(String? v) => v == null || v.trim().isEmpty;

@@ -1,11 +1,9 @@
-import 'package:validateit/src/validators/null_or_empty.dart';
+import 'null_or_empty.dart';
 
-/// Checks if a field is null or empty
-/// 
-/// returns [String]
-/// 
-/// returns error message if the field is null or empty
-/// otherwise returns null
-/// 
-/// Used to display field validation messages
-String? required(String? v, String? k) => isNullOrEmpty(v) ? 'The $k field is required' : null;
+/// Ensure that a value is present.
+///
+/// Returns an error message if [v] is `null` or empty. Otherwise returns
+/// `null`. The [k] parameter is used in the returned error message to identify
+/// the field name.
+String? required(String? v, String k) =>
+    isNullOrEmpty(v) ? 'The $k field is required' : null;

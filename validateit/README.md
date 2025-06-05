@@ -1,39 +1,51 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# ValidateIt
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+A lightweight collection of form validation helpers for Dart and Flutter projects. The package focuses on simple utilities for validating user input such as email addresses and South African phone numbers.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Email validation** using the [`email_validator`](https://pub.dev/packages/email_validator) package.
+- **Phone number validation** for South Africa powered by [`dlibphonenumber`](https://pub.dev/packages/dlibphonenumber).
+- **Required field check** that ensures a value is present.
+- **`isNullOrEmpty` utility** to guard against empty input.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add `validateit` to your project by including it in your `pubspec.yaml` dependencies:
+
+```yaml
+dependencies:
+  validateit:
+    path: ../validateit
+```
+
+Then run `flutter pub get` or `dart pub get` to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Import the package and use the helper functions to validate form fields. Each function returns `null` when the value is valid or an error message otherwise.
 
 ```dart
-const like = 'sample';
+import 'package:validateit/validateit.dart';
+
+void main() {
+  // Email
+  final emailError = email('user@example.com');
+
+  // Phone number
+  final phoneError = phone('0821234567');
+
+  // Required field
+  final requiredError = required('', 'name');
+
+  // Check for null or empty string
+  final isEmpty = isNullOrEmpty('');
+}
 ```
 
-## Additional information
+See the [`example` directory](example/) for full runnable examples demonstrating each validator.
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+## Contributing
+
+Contributions are welcome! Feel free to open issues or submit pull requests to improve the package.
+

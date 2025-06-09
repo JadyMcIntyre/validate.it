@@ -5,5 +5,5 @@ import 'null_or_empty.dart';
 /// Returns an error message if [v] is `null` or empty. Otherwise returns
 /// `null`. The [k] parameter is used in the returned error message to identify
 /// the field name.
-String? required(String? v, String k) =>
+String? requiredField(String? v, String k) =>
     isNullOrEmpty(v) ? 'The $k field is required' : null;

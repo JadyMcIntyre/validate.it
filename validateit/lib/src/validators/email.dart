@@ -9,7 +9,7 @@ import 'required.dart';
 /// checked using [validateEmail].
 ///
 /// Returns `null` when the email is valid.
-String? email(String? v, {bool r = true}) {
+String? checkEmail(String? v, {bool r = true}) {
   if (!r && isNullOrEmpty(v)) return null;
-  return required(v, 'email') ?? validateEmail(v);
+  return requiredField(v, 'email') ?? validateEmail(v);
 }

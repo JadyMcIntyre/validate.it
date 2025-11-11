@@ -6,7 +6,7 @@ import 'package:validateit/validateit.dart';
 /// 
 /// if a field name is not provided, the validation message defaults to 'Please select an option'
 String? dropDown(String? v, String dv, String? fn) =>
-    isNullOrEmpty(v) || v == dv
+    isStringNullOrEmpty(v) || v == dv
         ? fn != null
             ? 'Please select a $fn'
             : 'Please select an option'

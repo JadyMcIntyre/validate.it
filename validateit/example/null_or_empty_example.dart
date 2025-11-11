@@ -1,7 +1,7 @@
 import 'package:validateit/validateit.dart';
 
 void main() {
-  print(isNullOrEmpty(null));      // true
-  print(isNullOrEmpty(''));        // true
-  print(isNullOrEmpty('content')); // false
+  print(isStringNullOrEmpty(null));      // true
+  print(isStringNullOrEmpty(''));        // true
+  print(isStringNullOrEmpty('content')); // false
 }

@@ -15,17 +15,20 @@ String? validateZAPhone(String? v) {
   PhoneNumberUtil phoneUtil = PhoneNumberUtil.instance;
 
   try {
-    // Attempt to parse the number.
+    /// 1) Attempt to parse the number.
     PhoneNumber phoneNumber = phoneUtil.parse(trimmedValue, regionCode);
 
-    // Check if the parsed number is valid *for the specified region*.
+    /// 2) Check if the parsed number is valid *for South Africa*.
     bool isValid = phoneUtil.isValidNumberForRegion(phoneNumber, regionCode);
 
     if (isValid) {
-      return null; // Number is valid for South Africa
+      /// Number is valid for South Africa
+      return null;
     } else {
       return 'Please enter a valid South African phone number.';
     }
+
+    /// Catch any exceptions
   } on NumberParseException catch (_) {
     return 'Invalid phone number format. Please check the number.';
   } catch (_) {
@@ -34,7 +37,7 @@ String? validateZAPhone(String? v) {
 }
 
 /// Used to validate a phone number based on a set region
-/// 
+///
 /// Pass in a number [String], a region code [String] and optionally a region [String] (which will be used for the error message)
 String? validateCustomRegionPhoneNumber(String? v, String rc, String? region) {
   if (v == null) return 'Invalid phone number format. Please check the number.';

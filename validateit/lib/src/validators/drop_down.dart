@@ -1,13 +1,14 @@
 import 'package:validateit/validateit.dart';
 
-/// Validates that a dropdown field has a value that is not equal to it's default value `dv`
+/// Validates that a dropdown field has a value that is not equal to it's `defaultValue`
 ///
-/// requires a value, a default value `dv`, and an optional field name `fn`
-/// 
+/// requires a `value`, a default value `defaultValue`,
+/// optionally a field name `fieldName`
+///
 /// if a field name is not provided, the validation message defaults to 'Please select an option'
-String? dropDown(String? v, String dv, String? fn) =>
-    isStringNullOrEmpty(v) || v == dv
-        ? fn != null
-            ? 'Please select a $fn'
+String? dropDown(String? value, String defaultValue, String? fieldName) =>
+    isStringNullOrEmpty(value) || value == defaultValue
+        ? fieldName != null
+            ? 'Please select a $fieldName'
             : 'Please select an option'
         : null;

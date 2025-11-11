@@ -9,4 +9,4 @@ export 'src/validators/phone.dart';
 /// Required field validator.
 export 'src/validators/required.dart';
 /// Utility to check for `null` or empty strings.
-export 'src/validators/null_or_empty.dart';
+export 'src/utils/null_or_empty.dart';

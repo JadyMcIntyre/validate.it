@@ -1,5 +1,5 @@
 import '../services/email_service.dart';
-import 'null_or_empty.dart';
+import '../utils/null_or_empty.dart';
 import 'required.dart';
 
 /// Validate an email address.

@@ -1,5 +1,5 @@
 import '../services/phone_service.dart';
-import 'null_or_empty.dart';
+import '../utils/null_or_empty.dart';
 import 'required.dart';
 
 /// Validate a South African phone number.
